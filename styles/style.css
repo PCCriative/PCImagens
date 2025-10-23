@@ -1,6 +1,6 @@
 /*
  * BLOCCO 01: CSS Base e Navegação
- * CORREÇÕES: Fundo Preto, Texto Ouro
+ * CORREÇÕES: Fundo Preto, Texto Ouro, Posicionamento do Logo
  */
 
 /* RESET BÁSICO */
@@ -36,15 +36,18 @@ header {
 
 .container-header {
     display: flex;
-    justify-content: space-between;
+    /* CORREÇÃO CRÍTICA DE POSICIONAMENTO: Garante que o logo fique na ponta esquerda. */
+    justify-content: space-between; 
     align-items: center;
 }
 
-/* CORREÇÃO: ESTILO DO LOGO (300px) */
+/* CORREÇÃO: ESTILO E POSICIONAMENTO DO LOGO (300px) */
 .logo img {
     height: auto; 
-    width: 300px; /* Tamanho do logo definido aqui */
+    width: 300px; 
     display: block;
+    /* CORREÇÃO: Usamos o margin-right: auto para empurrar o menu para a direita. */
+    margin-right: auto;
 }
 
 /* MENU PRINCIPAL */
@@ -76,7 +79,6 @@ h1, h2, h3, h4 {
 
 /* FOOTER */
 footer {
-    /* Fundo do footer já está bom, mas garantindo a cor ouro */
     background: #333;
     color: #FFD700; /* CORREÇÃO: Cor Ouro no texto do footer */
     padding: 1.5rem 0;
@@ -179,9 +181,9 @@ main {
     display: block;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
     transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #1a1a1a; /* Fundo do item mais escuro */
+    background-color: #1a1a1a; 
     
     /* CORREÇÃO: Moldura Ouro */
     border: 3px solid #FFD700; 
