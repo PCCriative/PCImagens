@@ -1,5 +1,6 @@
 /*
  * BLOCCO 01: CSS Base e Navegação
+ * CORREÇÕES: Fundo Preto, Texto Ouro
  */
 
 /* RESET BÁSICO */
@@ -10,24 +11,27 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* Fonte placeholder */
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Fundo claro para contrastar com fotos */
-    color: #333;
+    
+    /* CORREÇÃO: Fundo Preto */
+    background-color: black; 
+    color: white; /* CORREÇÃO: Cor do texto padrão para contraste */
 }
 
 /* CONTAINER (Centraliza o conteúdo) */
 .container-header, .container-footer, #portfolio-page, #sobre-page, #contato-page {
     width: 90%;
-    max-width: 1200px; /* Limite de largura */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* HEADER/NAVEGAÇÃO */
 header {
-    background: #fff; /* Fundo branco para a barra de navegação */
+    /* Fundo Transparente para usar o fundo PRETO do body */
+    background: transparent; 
     padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #FFD700; /* Linha de borda Ouro */
 }
 
 .container-header {
@@ -36,10 +40,11 @@ header {
     align-items: center;
 }
 
-/* GARANTE QUE O LOGO APAREÇA */
+/* CORREÇÃO: ESTILO DO LOGO (300px) */
 .logo img {
-    height: 40px; /* Tamanho da logo placeholder */
-    display: block; /* Garante que a imagem seja tratada como bloco */
+    height: auto; 
+    width: 300px; /* Tamanho do logo definido aqui */
+    display: block;
 }
 
 /* MENU PRINCIPAL */
@@ -54,19 +59,26 @@ header {
 
 .menu-principal ul li a {
     text-decoration: none;
-    color: #333;
+    color: #FFD700; /* CORREÇÃO: Cor Ouro para o menu */
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .menu-principal ul li a:hover {
-    color: #007bff; /* Cor de destaque (placeholder azul) */
+    color: white; /* Cor de destaque ao passar o mouse */
 }
+
+/* CORREÇÃO: Títulos e Subtítulos em Ouro */
+h1, h2, h3, h4 {
+    color: #FFD700; 
+}
+
 
 /* FOOTER */
 footer {
+    /* Fundo do footer já está bom, mas garantindo a cor ouro */
     background: #333;
-    color: #fff;
+    color: #FFD700; /* CORREÇÃO: Cor Ouro no texto do footer */
     padding: 1.5rem 0;
     text-align: center;
     margin-top: 40px;
@@ -76,27 +88,27 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    flex-wrap: wrap;
 }
 
 .social-links a {
-    color: #fff;
+    color: #FFD700; /* CORREÇÃO: Cor Ouro nos links sociais */
     text-decoration: none;
     margin-left: 15px;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #007bff;
+    color: white;
 }
 
 /* Estilos para o CONTEÚDO (MAIN) */
 main {
-    padding: 0; /* Removendo padding padrão para o carrossel de tela cheia */
+    padding: 0;
 }
 
 /*
- * BLOCCO 02: Estilos do Carrossel (Slideshow) - (Manter, mesmo que não esteja em uso no portfolio)
+ * BLOCCO 02: Estilos do Carrossel (Slideshow)
  */
 
 .slideshow-container {
@@ -104,18 +116,17 @@ main {
     position: relative;
     margin: auto;
     overflow: hidden;
-    /* Altura definida pelo item img abaixo */
 }
 
 .mySlides {
     display: none;
     width: 100%;
-    height: 100vh; /* Garante que todos os slides ocupem a tela inteira */
+    height: 100vh;
 }
 
 .mySlides img {
     width: 100%;
-    height: 100%; /* Ocupa 100% da altura do slide */
+    height: 100%;
     object-fit: cover;
 }
 
@@ -138,27 +149,25 @@ main {
     padding: 40px 20px;
 }
 
-.portfolio-intro { /* Corrigido de .portfolio-header para .portfolio-intro (nome no HTML) */
+.portfolio-intro {
     text-align: center;
     margin-bottom: 50px;
 }
 
 .portfolio-intro h1 {
     font-size: 2.5em;
-    color: #1a1a1a;
+    color: #FFD700; /* CORREÇÃO: Título em Ouro */
 }
 
 .portfolio-intro p {
     font-size: 1.1em;
-    color: #666;
+    color: white; /* Texto de apoio em Branco para o fundo Preto */
     margin-top: 10px;
 }
 
 /* Estilos de Categoria */
-/* Mantidos para o caso de você usar categorias, embora a estrutura atual seja uma única grid */
-
 /* Listagem de Álbuns (Grid) */
-.album-grid { /* CLASSE CORRIGIDA para .album-grid (Nome no HTML) */
+.album-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
@@ -170,19 +179,22 @@ main {
     display: block;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
     transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #fff; /* Adiciona fundo branco para a caixa do item */
+    background-color: #1a1a1a; /* Fundo do item mais escuro */
+    
+    /* CORREÇÃO: Moldura Ouro */
+    border: 3px solid #FFD700; 
 }
 
 .album-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 .album-item img {
     width: 100%;
-    height: 250px; /* Mantém a altura fixa da capa */
+    height: 250px;
     object-fit: cover;
     display: block;
 }
@@ -197,12 +209,12 @@ main {
     font-size: 1.1em;
     margin: 0 0 5px 0;
     text-transform: uppercase;
-    color: #333;
+    color: #FFD700; /* CORREÇÃO: Título do Álbum em Ouro */
 }
 
 .album-info p {
     font-size: 0.9em;
-    color: #666;
+    color: white; /* Categoria em Branco */
     margin: 0;
 }
 
@@ -210,7 +222,7 @@ main {
 /*
  * BLOCCO 05a: Estilos das Páginas Individuais de Álbum
  */
-/* Mantidos sem alteração */
+
 #album-page {
     padding: 40px 20px;
 }
@@ -223,32 +235,31 @@ main {
 
 .album-title {
     font-size: 2.2em;
-    color: #1a1a1a;
+    color: #FFD700; /* CORREÇÃO: Título do Álbum em Ouro */
     margin-bottom: 15px;
     text-transform: uppercase;
 }
 
 .album-intro {
     font-size: 1.1em;
-    color: #555;
+    color: white; /* Texto em Branco */
     margin-bottom: 30px;
     line-height: 1.8;
 }
 
 .back-link a {
-    color: #007bff;
+    color: #FFD700; /* CORREÇÃO: Link em Ouro */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .back-link a:hover {
-    color: #0056b3;
+    color: white;
 }
 
-/* Estilos da Galeria de Fotos (Layout Flexível) */
+/* Estilos da Galeria de Fotos (Moldura aplicada aqui) */
 .album-gallery {
-    /* Layout de colunas fluido para fotos */
     column-count: 3; 
     column-gap: 15px;
     max-width: 1200px;
@@ -256,25 +267,27 @@ main {
 }
 
 .album-gallery img {
-    width: 100%; /* Garante que a imagem preencha a coluna */
+    width: 100%;
     height: auto;
-    margin-bottom: 15px; /* Espaço entre as fotos verticais */
+    margin-bottom: 15px;
     display: block;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Garante que o CSS não force uma nova coluna durante a impressão */
     break-inside: avoid;
+    
+    /* CORREÇÃO: Moldura Ouro em todas as fotos da galeria */
+    border: 3px solid #FFD700; 
 }
 
 /* Responsividade da Galeria */
 @media (max-width: 900px) {
     .album-gallery {
-        column-count: 2; /* 2 colunas em tablets */
+        column-count: 2;
     }
 }
 
 @media (max-width: 600px) {
     .album-gallery {
-        column-count: 1; /* 1 coluna em celulares */
+        column-count: 1;
     }
 }
