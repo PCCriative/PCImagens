@@ -20,11 +20,13 @@ body {
 }
 
 /* CONTAINER (Centraliza o conteúdo) */
-/* CORREÇÃO CRÍTICA: REMOÇÃO do .container-header DESSA REGRA para que ele possa ter largura total */
+/* CORREÇÃO CRÍTICA: Força a cor do texto para White nos containers principais */
 .container-footer, #portfolio-page, #sobre-page, #contato-page {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    /* CORREÇÃO: Garante que o texto dentro destes containers seja Branco */
+    color: white; 
 }
 
 /* HEADER/NAVEGAÇÃO */
@@ -94,15 +96,22 @@ footer {
     padding: 1.5rem 0;
     text-align: center;
     margin-top: 40px;
+    width: 100%; /* Garante largura total */
 }
 
+/* CORREÇÃO NO FOOTER: Ajuste para alinhar com o header */
 .container-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* Ajustando o padding para manter consistência com o header */
+    /* Adiciona o padding lateral para alinhar com o header */
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 5%; 
+    /* Mantendo a cor branca no footer */
+    color: white; 
 }
 
 .social-links a {
@@ -305,4 +314,3 @@ main {
         column-count: 1;
     }
 }
-
