@@ -20,7 +20,8 @@ body {
 }
 
 /* CONTAINER (Centraliza o conteúdo) */
-.container-header, .container-footer, #portfolio-page, #sobre-page, #contato-page {
+/* REMOVIDO: .container-header foi removido daqui para que ele use a largura total */
+.container-footer, #portfolio-page, #sobre-page, #contato-page {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -28,26 +29,32 @@ body {
 
 /* HEADER/NAVEGAÇÃO */
 header {
-    /* Fundo Transparente para usar o fundo PRETO do body */
     background: transparent; 
-    padding: 1rem 0;
+    /* CORREÇÃO CRÍTICA: Aplica o espaçamento horizontal nas bordas do header */
+    padding: 1rem 5%; 
     border-bottom: 1px solid #FFD700; /* Linha de borda Ouro */
+    width: 100%; /* Garante a largura total */
 }
 
 .container-header {
     display: flex;
-    /* CORREÇÃO CRÍTICA DE POSICIONAMENTO: Garante que o logo fique na ponta esquerda. */
+    /* Adicionado max-width para que o conteúdo não se espalhe demais em telas gigantes */
+    max-width: 1200px; 
+    margin: 0 auto; /* Centraliza o conteúdo dentro do header */
+    /* CORREÇÃO: Garante que o logo fique na extrema esquerda e o menu na extrema direita. */
     justify-content: space-between; 
     align-items: center;
 }
 
 /* CORREÇÃO: ESTILO E POSICIONAMENTO DO LOGO (300px) */
+.logo {
+    /* Removido margin-right: auto pois o justify-content já faz o trabalho */
+}
+
 .logo img {
     height: auto; 
     width: 300px; 
     display: block;
-    /* CORREÇÃO: Usamos o margin-right: auto para empurrar o menu para a direita. */
-    margin-right: auto;
 }
 
 /* MENU PRINCIPAL */
@@ -91,6 +98,8 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    /* Ajustando o padding para manter consistência com o header */
+    padding: 0 5%; 
 }
 
 .social-links a {
@@ -148,12 +157,14 @@ main {
  */
 
 #portfolio-page {
-    padding: 40px 20px;
+    padding: 40px 0; /* Removido padding horizontal, pois o .container-header já trata disso */
 }
 
 .portfolio-intro {
     text-align: center;
     margin-bottom: 50px;
+    /* Adicionando padding lateral para alinhar com o header */
+    padding: 0 5%; 
 }
 
 .portfolio-intro h1 {
@@ -173,6 +184,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
+    /* Adicionando padding lateral para alinhar com o header */
+    padding: 0 5%; 
 }
 
 .album-item {
@@ -226,13 +239,15 @@ main {
  */
 
 #album-page {
-    padding: 40px 20px;
+    padding: 40px 0; /* Removido padding horizontal, pois o .container-header já trata disso */
 }
 
 .album-details {
     max-width: 800px;
     margin: 0 auto 50px auto;
     text-align: center;
+    /* Adicionando padding lateral para alinhar com o header */
+    padding: 0 5%; 
 }
 
 .album-title {
@@ -266,6 +281,8 @@ main {
     column-gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
+    /* Adicionando padding lateral para alinhar com o header */
+    padding: 0 5%; 
 }
 
 .album-gallery img {
