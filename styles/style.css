@@ -36,12 +36,15 @@ header {
     width: 100%; /* Garante a largura total */
 }
 
-/* CORREÇÃO FINAL: Container-header agora usa a largura total (100%) dentro do padding do header */
+/* CORREÇÃO FINAL FORÇADA: Container-header agora usa a largura total (100%) e centraliza seu conteúdo */
 .container-header {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    width: 100%; /* A REGRA CRÍTICA PARA O ALINHAMENTO LATERAL */
+    
+    /* Força a largura total, ignorando qualquer conflito de regra herdada */
+    width: 100% !important; 
+    
     max-width: 1200px; /* Limite de largura para telas muito grandes */
     margin: 0 auto; /* Centraliza o conteúdo dentro do header */
 }
