@@ -16,16 +16,16 @@ body {
     
     /* CORREÇÃO: Fundo Preto */
     background-color: black; 
-    color: white; /* CORREÇÃO: Cor do texto padrão para contraste */
+    /* Cor do texto padrão para contraste, será sobrescrito onde necessário */
+    color: white; 
 }
 
 /* CONTAINER (Centraliza o conteúdo) */
-/* CORREÇÃO CRÍTICA: Força a cor do texto para White nos containers principais */
 .container-footer, #portfolio-page, #sobre-page, #contato-page {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    /* CORREÇÃO: Garante que o texto dentro destes containers seja Branco */
+    /* Garante que o texto principal nestas páginas seja Branco */
     color: white; 
 }
 
@@ -83,9 +83,20 @@ header {
     color: white; /* Cor de destaque ao passar o mouse */
 }
 
-/* CORREÇÃO: Títulos e Subtítulos em Ouro */
+/* CORREÇÃO CRÍTICA: Títulos e Subtítulos em Ouro */
 h1, h2, h3, h4 {
-    color: #FFD700; 
+    color: #FFD700 !important; /* Forçando cor ouro para todos os títulos */
+}
+
+/* NOVA CORREÇÃO: Links (botões e textos) em Ouro por padrão */
+a:link, a:visited {
+    color: #FFD700; /* Define a cor Ouro para links não visitados e visitados */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: white; /* Cor de destaque ao passar o mouse */
 }
 
 
@@ -110,15 +121,14 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%; 
-    /* Mantendo a cor branca no footer */
+    /* O texto principal do footer é branco, mas os links serão ouro */
     color: white; 
 }
 
 .social-links a {
-    color: #FFD700; /* CORREÇÃO: Cor Ouro nos links sociais */
+    color: #FFD700; /* Cor Ouro nos links sociais */
     text-decoration: none;
     margin-left: 15px;
-    transition: color 0.3s;
 }
 
 .social-links a:hover {
