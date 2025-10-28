@@ -1,6 +1,6 @@
 /* ================================================= */
-/* ARQUIVO: styles.css - LAYOUT GLOBAL OURO E PRETO  */
-/* Implementa: Cores Ouro/Preto, Logo Centralizado, Redes Sociais e Menu nos cantos. */
+/* ARQUIVO: styles.css - LAYOUT FINAL ETAPA 1        */
+/* Implementa: Cores Ouro/Preto, Layout de Duas Linhas, e Proteção. */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
@@ -20,35 +20,92 @@ a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
 
 /* ---------------- HEADER GERAL ---------------- */
 
-/* 01, 02, 03) LAYOUT GERAL DO CABEÇALHO */
 header {
     background-color: #000000;
     padding: 15px 0;
     position: relative;
-    border-bottom: 1px solid #333; 
     min-height: 80px; 
 }
 
+/* 01) REESTRUTURAÇÃO DO CABEÇALHO PARA DUAS LINHAS */
 .container-header {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Espaça Redes e Menu */
-    align-items: center;
+    flex-direction: column; /* Coloca Linha Superior e Menu em linhas separadas */
+    align-items: center; 
     position: relative;
+    padding-bottom: 10px; 
+}
+
+.header-linha-superior {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaça Redes, Logo e Espaço Vazio */
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+/* 02) LINHA DIVISÓRIA ENTRE O CABEÇALHO E O CONTEÚDO */
+.container-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FFD700; /* Linha cor ouro */
+}
+
+
+/* 01) LOGOTIPO: MAIOR E NA LINHA SUPERIOR (Sem posicionamento absoluto) */
+.logo {
+    position: static; 
+    transform: none;
+    width: 180px; /* Aumenta o tamanho do logo */
+    height: auto;
+    margin: 0;
+    z-index: 4; 
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none !important; 
+}
+
+/* 01) MENU DE NAVEGAÇÃO: NA LINHA ABAIXO DO LOGOTIPO (Centralizado) */
+.menu-principal {
+    width: 100%;
+    text-align: center; 
+    z-index: 3;
+    padding-top: 10px;
+}
+.menu-principal ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+}
+.menu-principal ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.menu-principal ul li a:hover {
+    text-decoration: underline;
 }
 
 /* 01) REDES SOCIAIS: CANTO SUPERIOR ESQUERDO COM ÍCONES */
 .social-icons {
-    flex-basis: 20%; /* Ocupa 20% do espaço à esquerda */
+    flex-basis: 20%; 
     display: flex;
     gap: 12px;
     align-items: center;
     z-index: 3;
 }
-
-/* Estilo dos ícones */
 .social-icons a {
     display: block;
     width: 24px; 
@@ -63,45 +120,6 @@ header {
 .social-icons .icon-face { background-image: url('assets/icons/facebook_icon_gold.png'); }
 .social-icons .icon-youtube { background-image: url('assets/icons/youtube_icon_gold.png'); }
 
-
-/* 02) LOGOTIPO: CENTRALIZADO E TAMANHO ADEQUADO */
-.logo {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
-    width: 120px; /* Tamanho pequeno do logo */
-    height: auto;
-    z-index: 4; 
-}
-.logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border: none !important; 
-}
-
-/* 03) MENU DE NAVEGAÇÃO: CANTO SUPERIOR DIREITO */
-.menu-principal {
-    flex-basis: 40%; /* Ocupa 40% do espaço à direita */
-    display: flex;
-    justify-content: flex-end; /* Alinha o menu à direita */
-    z-index: 3;
-}
-.menu-principal ul {
-    list-style: none; 
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    gap: 25px; 
-}
-.menu-principal ul li a {
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.menu-principal ul li a:hover {
-    text-decoration: underline;
-}
 
 /* ---------------- CONTEÚDO PRINCIPAL (MAIN) ---------------- */
 main {
@@ -140,7 +158,7 @@ main img, .album-link img {
 
 /* ---------------- RODAPÉ ---------------- */
 
-/* 05) RODAPÉ: COM O NOVO TEXTO E CORES */
+/* 03) RODAPÉ: COM O NOVO TEXTO E CORES */
 footer {
     background-color: #000000;
     color: #FFD700;
