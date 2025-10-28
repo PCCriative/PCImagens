@@ -1,74 +1,156 @@
+/* ================================================= */
+/* ARQUIVO: styles.css - LAYOUT GLOBAL OURO E PRETO  */
+/* Implementa: Cores Ouro/Preto, Logo Centralizado, Redes Sociais e Menu nos cantos. */
+/* ================================================= */
+
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
 body {
-    background-color: #000 !important; 
+    background-color: #000000 !important; /* Fundo preto */
     color: #FFD700 !important; /* Cor Ouro para textos padrões */
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
 }
 
-/* Garante que links e títulos também fiquem na cor ouro */
-a, h1, h2, h3, .menu-principal ul li a {
+/* Garante que links, títulos e botões também fiquem na cor ouro */
+a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     color: #FFD700 !important;
+    text-decoration: none;
 }
 
-/* 01 e 02) NOVO LAYOUT DO CABEÇALHO (Logo Centralizado e Redes Sociais no Canto) */
+/* ---------------- HEADER GERAL ---------------- */
+
+/* 01, 02, 03) LAYOUT GERAL DO CABEÇALHO */
 header {
-    /* Remove espaçamentos e alinhamentos antigos */
-    padding-top: 20px;
+    background-color: #000000;
+    padding: 15px 0;
     position: relative;
-    text-align: center;
-    border-bottom: none; /* Remove qualquer linha antiga */
+    border-bottom: 1px solid #333; 
+    min-height: 80px; 
 }
 
 .container-header {
-    /* Garante que o container use flex para posicionar os itens */
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Coloca Logo e Menu em linhas separadas */
+    justify-content: space-between; /* Espaça Redes e Menu */
     align-items: center;
     position: relative;
 }
 
-/* 02) POSICIONAMENTO DAS REDES SOCIAIS (Canto Superior Esquerdo) */
-.social-links-header {
-    position: absolute;
-    top: 0; 
-    left: 0; 
+/* 01) REDES SOCIAIS: CANTO SUPERIOR ESQUERDO COM ÍCONES */
+.social-icons {
+    flex-basis: 20%; /* Ocupa 20% do espaço à esquerda */
     display: flex;
-    gap: 15px;
-    z-index: 10; 
-    padding: 10px 0;
+    gap: 12px;
+    align-items: center;
+    z-index: 3;
 }
 
-/* 01) GARANTE QUE O LOGO FIQUE CENTRALIZADO */
+/* Estilo dos ícones */
+.social-icons a {
+    display: block;
+    width: 24px; 
+    height: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent; 
+}
+/* É NECESSÁRIO CRIAR A PASTA assets/icons E SALVAR AS IMAGENS */
+.social-icons .icon-tel { background-image: url('assets/icons/phone_icon_gold.png'); }
+.social-icons .icon-insta { background-image: url('assets/icons/instagram_icon_gold.png'); }
+.social-icons .icon-face { background-image: url('assets/icons/facebook_icon_gold.png'); }
+.social-icons .icon-youtube { background-image: url('assets/icons/youtube_icon_gold.png'); }
+
+
+/* 02) LOGOTIPO: CENTRALIZADO E TAMANHO ADEQUADO */
 .logo {
-    text-align: center;
-    margin-top: 30px; /* Espaço entre o topo e o logo */
-    margin-bottom: 30px;
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+    width: 120px; /* Tamanho pequeno do logo */
+    height: auto;
+    z-index: 4; 
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: none !important; 
 }
 
-/* 05) MOLDURA OURO NAS FOTOS */
-/* Aplica borda ouro em todas as fotos da página principal e álbuns */
+/* 03) MENU DE NAVEGAÇÃO: CANTO SUPERIOR DIREITO */
+.menu-principal {
+    flex-basis: 40%; /* Ocupa 40% do espaço à direita */
+    display: flex;
+    justify-content: flex-end; /* Alinha o menu à direita */
+    z-index: 3;
+}
+.menu-principal ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 25px; 
+}
+.menu-principal ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.menu-principal ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- CONTEÚDO PRINCIPAL (MAIN) ---------------- */
+main {
+    padding: 40px 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos de Botão */
+.btn-primary {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #FFD700;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #FFD700;
+    color: #000000 !important;
+}
+
+/* ---------------- IMAGENS E PROTEÇÃO ---------------- */
+
+/* 04) PROTEÇÃO E MOLDURA OURO NAS FOTOS */
 main img, .album-link img {
-    border: 3px solid #FFD700;
+    border: 3px solid #FFD700; /* Moldura ouro */
+    pointer-events: none; /* Desabilita interações do mouse */
+    user-select: none; /* Impede seleção de texto */
+    -webkit-user-drag: none; /* Impede arrastar a imagem */
 }
 
-/* 04) PROTEÇÃO DE FOTOS (Aviso: Não é 100% eficaz contra downloads) */
-/* Desabilita clique direito (context menu) nas imagens */
-img {
-    pointer-events: none;
-    user-select: none;
-}
-/* Aviso: A proteção completa contra reprodução requer desabilitar o clique direito via JavaScript e um aviso de direitos autorais, mas o CSS acima impede a seleção e o menu de contexto padrão. */
+/* ---------------- RODAPÉ ---------------- */
 
-/* 06) RODA PÉ SIMPLES (Ajustes de estilo) */
+/* 05) RODAPÉ: COM O NOVO TEXTO E CORES */
 footer {
-    padding: 20px 0;
+    background-color: #000000;
+    color: #FFD700;
     text-align: center;
-    /* Remova qualquer regra de cor de fundo se ela conflitar com o preto */
+    padding: 25px 0;
+    border-top: 1px solid #333; 
+    margin-top: 50px; 
 }
-
-/* Remove a linha de links sociais antiga do rodapé, se existirem */
-.container-footer .social-links {
-    display: none;
+.container-footer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
