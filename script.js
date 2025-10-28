@@ -1,36 +1,38 @@
-/*
- * BLOCCO 05b: Funcionalidade JavaScript
- * Objetivo: Fazer o carrossel (slideshow) da página inicial rodar automaticamente.
- */
+// Atualize este array conforme adicionar novos álbuns
+const albuns = [
+  {
+    nome: "Estádio Nilton Santos",
+    primeiraFoto: "assets/nilton_santos/foto1.jpg",
+    link: "nilton_santos.html"
+  },
+  // Exemplo de mais álbuns:
+  // {
+  //   nome: "Casamento Ana & João",
+  //   primeiraFoto: "assets/casamento_ana_joao/foto1.jpg",
+  //   link: "casamento_ana_joao.html"
+  // }
+];
 
-let slideIndex = 0;
-showSlides();
+let idx = 0;
 
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
+const img = document.getElementById('carrossel-foto');
+const nome = document.getElementById('album-nome');
+const link = document.getElementById('album-link');
 
-    // Oculta todos os slides
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    
-    // Avança para o próximo slide
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-
-    // Exibe o slide atual
-    if (slides.length > 0) {
-        slides[slideIndex - 1].style.display = "block";
-    }
-    
-    // Chama a função novamente após 5 segundos (5000 milissegundos)
-    setTimeout(showSlides, 5000); 
+function atualizaCarrossel() {
+  img.src = albuns[idx].primeiraFoto;
+  img.alt = albuns[idx].nome;
+  nome.textContent = albuns[idx].nome;
+  link.href = albuns[idx].link;
 }
 
-/* * NOTA DE IMPLEMENTAÇÃO: 
- * Este script faz o carrossel funcionar em loop infinito, trocando de slide a cada 5 segundos.
- * Certifique-se de que a tag <script> abaixo seja adicionada no final do body do index.html.
- */
+document.getElementById('prev').onclick = () => {
+  idx = (idx - 1 + albuns.length) % albuns.length;
+  atualizaCarrossel();
+};
+document.getElementById('next').onclick = () => {
+  idx = (idx + 1) % albuns.length;
+  atualizaCarrossel();
+};
+
+window.onload = atualizaCarrossel;

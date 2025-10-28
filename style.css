@@ -1,173 +1,49 @@
-/* -------- Reset & Base -------- */
 body {
+  background: #000;
+  color: #FFD700;
   font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f7f7f7;
-}
-
-/* -------- Header -------- */
-header {
-  background: #222;
-}
-
-.container-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: auto;
-  padding: 10px;
-}
-
-.logo img {
-  height: 60px;
-}
-
-/* Menu Principal */
-.menu-principal ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
   margin: 0;
   padding: 0;
 }
-.menu-principal a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.menu-principal a:hover,
-.menu-principal a:focus {
-  text-decoration: underline;
-  outline: none;
-}
-
-/* -------- Intro Section -------- */
-.intro {
+h1 {
   text-align: center;
-  padding: 40px;
 }
-
-/* -------- Albums & Portfolio -------- */
-.albums, .portfolio-list {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.album-list {
+.carrossel {
   display: flex;
-  gap: 30px;
-}
-
-.album-card, .album-card img {
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.album-card {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
-  padding: 15px;
-  text-decoration: none;
-}
-.album-card:hover,
-.album-card:focus {
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.12);
-  transform: translateY(-4px) scale(1.03);
-}
-
-.album-card img {
-  width: 220px;
-  height: auto;
-  border-radius:8px;
-}
-
-.album-card span {
-  margin-top:10px;
-  color:#222;
-}
-
-/* -------- Album Page -------- */
-#album-page .album-details {
-   max-width:800px; 
-   margin:auto; 
-   padding:30px; 
-   text-align:center;
-}
-#album-page .album-gallery {
-   display:flex; 
-   flex-wrap:wrap; 
-   gap:20px; 
-   justify-content:center; 
-   padding-bottom:40px;
-}
-#album-page .album-gallery img {
-   width:320px; 
-   border-radius:8px; 
-   box-shadow:0px 2px 8px rgba(0,0,0,0.08);
-}
-
-/* -------- Navegação de Retorno -------- */
-.back-link { margin-top:20px; }
-.back-link a { color:#0077cc; text-decoration:none; }
-.back-link a:hover,
-.back-link a:focus { text-decoration:underline; }
-
-/* -------- Sobre & Contato -------- */
-#about-page, #contact-page { 
-   max-width:800px; 
-   margin:auto; 
-   padding:40px; 
-   background:#fff; 
-   border-radius:8px; 
-   box-shadow:0px 2px 8px rgba(0,0,0,0.08); 
-}
-
-/* -------- Footer -------- */
-.container-footer {
-   max-width:1100px; 
-   margin:auto; 
-   padding:20px; 
-   display:flex; 
-   justify-content:space-between; 
-   align-items:center; 
-   font-size:.95em;
-}
-.social-links a { 
-    margin-left:15px; 
-    color:#0077cc; 
-    text-decoration:none;
-    transition: color .2s;
-}
-.social-links a:hover,
-.social-links a:focus { text-decoration:underline; }
-
-/* -------- Contatos -------- */
-.contact-list { list-style:none; padding-left:0;}
-.contact-list li { margin-bottom:10px;}
-
-/* -------- Sobre - Fotos -------- */
-.about-photos {
-  display: flex;
-  gap: 20px;
   justify-content: center;
-  margin-top: 30px;
+  margin: 40px 0;
 }
-.about-photo {
-  width: 220px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+.carrossel-btn {
+  background: none;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-size: 2em;
+  padding: 0 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
 }
-
-/* -------- Mobile Responsivo -------- */
-@media (max-width:700px) {
-   .container-header,
-   .container-footer { flex-direction:column; align-items:flex-start;}
-   .album-list { flex-direction:column;}
-   #album-page .album-gallery img { width:100%; }
-   .about-photos { flex-direction: column; align-items: center;}
-   .about-photo { width:90%; max-width:320px;}
+.carrossel-btn:hover {
+  background: #FFD700;
+  color: #000;
+}
+#carrossel-foto {
+  width: 400px;
+  height: 260px;
+  object-fit: cover;
+  margin: 0 24px;
+  border: 6px solid #FFD700;
+  border-radius: 10px;
+  background: #000;
+  display: block;
+}
+#album-nome {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #FFD700;
+}
+a {
+  text-decoration: none;
 }
