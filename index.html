@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfólio | Paulo Costa Fotografia</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial | PCCRIATIVEDIGITAL</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <h1>Portfólio</h1>
-  <div class="carrossel">
-    <button id="prev" class="carrossel-btn">&#8592;</button>
-    <a id="album-link" href="#">
-      <img id="carrossel-foto" src="" alt="">
-      <div id="album-nome"></div>
-    </a>
-    <button id="next" class="carrossel-btn">&#8594;</button>
-  </div>
-  <script src="carrossel.js"></script>
+    <header>
+        <div class="container-header">
+                        <div class="social-links-header">
+                                <a href="https://wa.me/5521989879136" target="_blank">Telefone</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/pccriativedigital/" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Youtube</a>
+            </div>
+
+                        <a href="index.html" class="logo">
+                <img src="assets/Logo.png" alt="PC Criative Digital Logo">
+            </a>
+
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="eventos_sociais.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>                     <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home-page">
+        <section class="hero-section">
+            <h1>PAULO COSTA: FOTOGRAFIA CRIAVIDA DIGITAL</h1>
+            <p>Capturando a essência de momentos e projetos com a sua visão criativa.</p>
+            <a href="eventos_sociais.html" class="btn-primary">Ver Portfólio Completo</a>
+        </section>
+
+        <section class="latest-album">
+            <h2>Álbum Mais Recente</h2>
+            <a href="albuns/aniversario_rute.html" class="album-link">
+                <img src="assets/capas/aniversario_rute.jpg" alt="Capa do Álbum Aniversário Rute">
+                <div class="album-info">
+                    <h3>Aniversário Rute</h3>
+                    <p>Veja as fotos de um evento de 70 anos cheio de emoção e história.</p>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+                        <p>&copy; 2025 Paulo Costa Fotografia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

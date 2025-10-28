@@ -1,0 +1,74 @@
+/* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
+body {
+    background-color: #000 !important; 
+    color: #FFD700 !important; /* Cor Ouro para textos padrões */
+}
+
+/* Garante que links e títulos também fiquem na cor ouro */
+a, h1, h2, h3, .menu-principal ul li a {
+    color: #FFD700 !important;
+}
+
+/* 01 e 02) NOVO LAYOUT DO CABEÇALHO (Logo Centralizado e Redes Sociais no Canto) */
+header {
+    /* Remove espaçamentos e alinhamentos antigos */
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    border-bottom: none; /* Remove qualquer linha antiga */
+}
+
+.container-header {
+    /* Garante que o container use flex para posicionar os itens */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Coloca Logo e Menu em linhas separadas */
+    align-items: center;
+    position: relative;
+}
+
+/* 02) POSICIONAMENTO DAS REDES SOCIAIS (Canto Superior Esquerdo) */
+.social-links-header {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    display: flex;
+    gap: 15px;
+    z-index: 10; 
+    padding: 10px 0;
+}
+
+/* 01) GARANTE QUE O LOGO FIQUE CENTRALIZADO */
+.logo {
+    text-align: center;
+    margin-top: 30px; /* Espaço entre o topo e o logo */
+    margin-bottom: 30px;
+}
+
+/* 05) MOLDURA OURO NAS FOTOS */
+/* Aplica borda ouro em todas as fotos da página principal e álbuns */
+main img, .album-link img {
+    border: 3px solid #FFD700;
+}
+
+/* 04) PROTEÇÃO DE FOTOS (Aviso: Não é 100% eficaz contra downloads) */
+/* Desabilita clique direito (context menu) nas imagens */
+img {
+    pointer-events: none;
+    user-select: none;
+}
+/* Aviso: A proteção completa contra reprodução requer desabilitar o clique direito via JavaScript e um aviso de direitos autorais, mas o CSS acima impede a seleção e o menu de contexto padrão. */
+
+/* 06) RODA PÉ SIMPLES (Ajustes de estilo) */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    /* Remova qualquer regra de cor de fundo se ela conflitar com o preto */
+}
+
+/* Remove a linha de links sociais antiga do rodapé, se existirem */
+.container-footer .social-links {
+    display: none;
+}
