@@ -1,6 +1,6 @@
 /* ================================================= */
-/* ARQUIVO: styles.css - LAYOUT FINAL ETAPA 1 CORRIGIDO */
-/* Implementa: Logotipo Maior (300px), Altura Reduzida e Linha Divisória. */
+/* ARQUIVO: styles.css - LAYOUT FINAL ETAPA 1 CORRIGIDO (400PX) */
+/* Implementa: Logotipo Maior (400px), Altura Reduzida e Linha Divisória. */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
@@ -59,11 +59,11 @@ header {
 }
 
 
-/* 01) LOGOTIPO: MAIOR E NA LINHA SUPERIOR */
+/* 01) LOGOTIPO: MAIOR (EXTENSO) E NA LINHA SUPERIOR */
 .logo {
     position: static; 
     transform: none;
-    width: 300px; /* NOVO: Aumenta o tamanho para mostrar o nome completo (PCCRIATIVEDIGITAL) */
+    width: 400px; /* DEFINITIVO: Aumentado para garantir a visualização do nome completo */
     max-width: 100%;
     height: auto;
     margin: 0;
