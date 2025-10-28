@@ -1,6 +1,6 @@
 /* ================================================= */
-/* ARQUIVO: styles.css - LAYOUT FINAL ETAPA 1        */
-/* Implementa: Cores Ouro/Preto, Layout de Duas Linhas, e Proteção. */
+/* ARQUIVO: styles.css - LAYOUT FINAL ETAPA 1 CORRIGIDO */
+/* Implementa: Logotipo Maior (300px), Altura Reduzida e Linha Divisória. */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
@@ -18,13 +18,13 @@ a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     text-decoration: none;
 }
 
-/* ---------------- HEADER GERAL ---------------- */
+/* ---------------- HEADER GERAL (Altura Reduzida) ---------------- */
 
 header {
     background-color: #000000;
-    padding: 15px 0;
+    padding: 5px 0; /* REDUZIDO: Para subir o header */
     position: relative;
-    min-height: 80px; 
+    min-height: 60px; /* REDUZIDO: Altura mínima menor */
 }
 
 /* 01) REESTRUTURAÇÃO DO CABEÇALHO PARA DUAS LINHAS */
@@ -33,18 +33,18 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Coloca Linha Superior e Menu em linhas separadas */
+    flex-direction: column; 
     align-items: center; 
     position: relative;
-    padding-bottom: 10px; 
+    padding-bottom: 5px; /* REDUZIDO: Para subir a linha divisória */
 }
 
 .header-linha-superior {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Espaça Redes, Logo e Espaço Vazio */
+    justify-content: space-between; 
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px; /* REDUZIDO: Espaçamento menor */
 }
 
 /* 02) LINHA DIVISÓRIA ENTRE O CABEÇALHO E O CONTEÚDO */
@@ -59,11 +59,12 @@ header {
 }
 
 
-/* 01) LOGOTIPO: MAIOR E NA LINHA SUPERIOR (Sem posicionamento absoluto) */
+/* 01) LOGOTIPO: MAIOR E NA LINHA SUPERIOR */
 .logo {
     position: static; 
     transform: none;
-    width: 180px; /* Aumenta o tamanho do logo */
+    width: 300px; /* NOVO: Aumenta o tamanho para mostrar o nome completo (PCCRIATIVEDIGITAL) */
+    max-width: 100%;
     height: auto;
     margin: 0;
     z-index: 4; 
@@ -80,7 +81,7 @@ header {
     width: 100%;
     text-align: center; 
     z-index: 3;
-    padding-top: 10px;
+    padding-top: 5px; /* REDUZIDO: Para subir o menu */
 }
 .menu-principal ul {
     list-style: none; 
@@ -114,7 +115,6 @@ header {
     background-repeat: no-repeat;
     color: transparent; 
 }
-/* É NECESSÁRIO CRIAR A PASTA assets/icons E SALVAR AS IMAGENS */
 .social-icons .icon-tel { background-image: url('assets/icons/phone_icon_gold.png'); }
 .social-icons .icon-insta { background-image: url('assets/icons/instagram_icon_gold.png'); }
 .social-icons .icon-face { background-image: url('assets/icons/facebook_icon_gold.png'); }
@@ -151,9 +151,9 @@ main {
 /* 04) PROTEÇÃO E MOLDURA OURO NAS FOTOS */
 main img, .album-link img {
     border: 3px solid #FFD700; /* Moldura ouro */
-    pointer-events: none; /* Desabilita interações do mouse */
-    user-select: none; /* Impede seleção de texto */
-    -webkit-user-drag: none; /* Impede arrastar a imagem */
+    pointer-events: none; 
+    user-select: none; 
+    -webkit-user-drag: none; 
 }
 
 /* ---------------- RODAPÉ ---------------- */
