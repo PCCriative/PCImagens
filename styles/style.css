@@ -63,7 +63,7 @@ header {
 .logo {
     position: static; 
     transform: none;
-    width: 400px; /* DEFINITIVO: Aumentado para garantir a visualização do nome completo */
+    width: 200px; /* DEFINITIVO: Aumentado para garantir a visualização do nome completo */
     max-width: 100%;
     height: auto;
     margin: 0;
