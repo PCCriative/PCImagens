@@ -175,9 +175,9 @@ footer {
 
 /* Correção para evitar que o texto 'alt' ou a descrição da imagem apareça */
 .image-in-text {
-    overflow: hidden; /* Garante que o conteúdo quebra-cabeça não vaze */
-    line-height: 0; /* Ajuda a eliminar qualquer espaço extra de texto */
+    /* Mantemos a div, mas removemos overflow: hidden e line-height: 0 */
 }
+
 
 .image-in-text img {
     border: 3px solid #FFD700; 
