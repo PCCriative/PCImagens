@@ -187,3 +187,24 @@ footer {
     /* Adiciona regra para o alt não ser exibido como texto */
     color: transparent; 
 }
+
+/* ESTILO PARA COLOCAR AS DUAS FOTOS LADO A LADO */
+.container-fotos-paulo {
+    display: flex;                
+    justify-content: space-between; /* Coloca uma foto na esquerda e outra na direita */
+    align-items: flex-start;
+    margin: 30px auto; 
+    width: 100%;
+    max-width: 900px; 
+}
+
+.image-in-text {
+    width: 48%; 
+    box-sizing: border-box;
+}
+
+.image-in-text img {
+    width: 100%; 
+    height: auto;
+}
+
