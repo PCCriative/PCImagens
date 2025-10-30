@@ -188,7 +188,14 @@ footer {
 .about-details h1 {
     margin-bottom: 30px; 
     text-align: center;
+} 
+
+/* NOVO BLOCO (AUMENTO DA FONTE) VAI AQUI ABAIXO: */
+/* AJUSTE DE LEGIBILIDADE: AUMENTAR TAMANHO DA FONTE DO PARÁGRAFO */
+.about-details p {
+    font-size: 18px; /* Aumenta a fonte do parágrafo para melhor leitura */
 }
+
 
 /* ---------------- LAYOUT DE FOTOS FLUTUANTES (300PX) ---------------- */
 
