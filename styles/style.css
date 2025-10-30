@@ -312,4 +312,14 @@ footer {
 
 
 
+/* REGRA DE EMERGÊNCIA: Garante que as fotos sejam exibidas */
+.about-details .image-in-text {
+    /* Força o elemento a ser visível, ignorando regras conflitantes de visibilidade */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para ter certeza que está lá */
+}
+
+
 
