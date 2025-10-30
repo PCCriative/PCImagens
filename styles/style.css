@@ -63,7 +63,7 @@ header {
 .logo {
     position: static; 
     transform: none;
-    width: 200px; /* DEFINITIVO: Aumentado para garantir a visualização do nome completo */
+   width: 280px; /* ALTERADO: Aumentado para 280px, conforme solicitado */
     max-width: 100%;
     height: auto;
     margin: 0;
@@ -171,4 +171,19 @@ footer {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Correção para evitar que o texto 'alt' ou a descrição da imagem apareça */
+.image-in-text {
+    overflow: hidden; /* Garante que o conteúdo quebra-cabeça não vaze */
+    line-height: 0; /* Ajuda a eliminar qualquer espaço extra de texto */
+}
+
+.image-in-text img {
+    border: 3px solid #FFD700; 
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    /* Adiciona regra para o alt não ser exibido como texto */
+    color: transparent; 
 }
