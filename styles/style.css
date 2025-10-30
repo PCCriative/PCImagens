@@ -1,31 +1,35 @@
 /* ================================================= */
 /* ARQUIVO: styles.css - VERSÃO FINAL E LIMPA */
-/* Implementa: Logotipo 280px, Layout Flutuante Corrigido e CSS Limpo */
+/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza (#CCCCCC) e Layout Flutuante Corrigido */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
-
 body {
     background-color: #000000 !important; /* Fundo preto */
-    color: #FFD700 !important; /* Cor Ouro para textos padrões */
+    color: #FFD700 !important; /* Cor Ouro para textos padrões (será sobrescrito pelo cinza nos parágrafos) */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Garante que links, títulos e botões também fiquem na cor ouro */
+/* Garante que links, títulos e botões fiquem na cor ouro */
 a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     color: #FFD700 !important;
     text-decoration: none;
+}
+
+/* AJUSTE DE LEGIBILIDADE: MUDAR COR DO PARÁGRAFO PARA CINZA CLARO */
+.about-details p {
+    color: #CCCCCC !important; /* Cinza claro, mais suave para leitura prolongada */
 }
 
 /* ---------------- HEADER GERAL (Altura Reduzida) ---------------- */
 
 header {
     background-color: #000000;
-    padding: 5px 0; /* REDUZIDO: Para subir o header */
+    padding: 5px 0;
     position: relative;
-    min-height: 60px; /* REDUZIDO: Altura mínima menor */
+    min-height: 60px;
 }
 
 /* 01) REESTRUTURAÇÃO DO CABEÇALHO PARA DUAS LINHAS */
@@ -37,7 +41,7 @@ header {
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding-bottom: 5px; /* REDUZIDO: Para subir a linha divisória */
+    padding-bottom: 5px;
 }
 
 .header-linha-superior {
@@ -45,7 +49,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 5px; /* REDUZIDO: Espaçamento menor */
+    padding-bottom: 5px;
 }
 
 /* 02) LINHA DIVISÓRIA ENTRE O CABEÇALHO E O CONTEÚDO */
@@ -56,7 +60,7 @@ header {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #FFD700; /* Linha cor ouro */
+    background-color: #FFD700;
 }
 
 
@@ -64,7 +68,7 @@ header {
 .logo {
     position: static;
     transform: none;
-    width: 280px; /* ALTERADO: Aumentado para 280px */
+    width: 280px; /* Largura final do logotipo */
     max-width: 100%;
     height: auto;
     margin: 0;
@@ -82,7 +86,7 @@ header {
     width: 100%;
     text-align: center;
     z-index: 3;
-    padding-top: 5px; /* REDUZIDO: Para subir o menu */
+    padding-top: 5px;
 }
 .menu-principal ul {
     list-style: none;
@@ -151,7 +155,7 @@ main {
 
 /* 04) PROTEÇÃO E MOLDURA OURO NAS FOTOS (REGRA GLOBAL) */
 main img, .album-link img {
-    border: 3px solid #FFD700; /* Moldura ouro */
+    border: 3px solid #FFD700;
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -175,7 +179,7 @@ footer {
 }
 
 /* ================================================= */
-/* REGRAS FINAIS DA PÁGINA INICIAL (Alinhamento e Espaçamento) */
+/* REGRAS FINAIS DA PÁGINA INICIAL (Layout e Margens) */
 /* ================================================= */
 
 /* AJUSTE DO ESPAÇAMENTO GERAL DA SEÇÃO */
@@ -191,9 +195,9 @@ footer {
     text-align: center;
 }
 
-/* ---------------- LAYOUT DE FOTOS FLUTUANTES ---------------- */
+/* ---------------- LAYOUT DE FOTOS FLUTUANTES (300PX) ---------------- */
 
-/* Alinha a primeira imagem (Foto 1) à esquerda, flutuando ao lado do texto */
+/* Alinha a primeira imagem (Foto 1) à esquerda, com 300px de largura */
 .about-details .image-in-text:nth-child(3) {
     float: left; 
     margin-right: 20px; 
@@ -201,7 +205,7 @@ footer {
     width: 300px; 
 }
 
-/* Alinha a segunda imagem (Foto 2) à direita, flutuando ao lado do texto */
+/* Alinha a segunda imagem (Foto 2) à direita, com 300px de largura */
 .about-details .image-in-text:nth-child(5) {
     float: right;
     margin-left: 20px; 
@@ -209,7 +213,7 @@ footer {
     width: 300px; 
 }
 
-/* Garante que a imagem preencha o espaço definido pela div flutuante */
+/* Garante que a imagem preencha a largura de 300px e mantenha a proporção */
 .about-details .image-in-text img {
     width: 100%;
     height: auto;
@@ -220,9 +224,4 @@ footer {
     content: "";
     display: table;
     clear: both;
-}
-
-/* Regra para limpar a div de imagem que removemos anteriormente */
-.image-in-text {
-    /* Não tem nenhuma regra aqui, o que é o correto para não colapsar a imagem */
 }
