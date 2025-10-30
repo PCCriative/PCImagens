@@ -208,3 +208,34 @@ footer {
     height: auto;
 }
 
+
+/* ESTILOS PARA ALINHAR AS FOTOS FLUTUANDO AO LADO DO TEXTO */
+
+/* Alinha a primeira imagem (Foto 1) à esquerda */
+.about-details .image-in-text:nth-child(3) {
+    float: left; 
+    margin-right: 20px; /* Espaço entre a foto e o texto */
+    margin-bottom: 20px;
+    width: 300px; /* Define um tamanho para a foto flutuar bem */
+}
+
+/* Alinha a segunda imagem (Foto 2) à direita */
+.about-details .image-in-text:nth-child(5) {
+    float: right;
+    margin-left: 20px; /* Espaço entre o texto e a foto */
+    margin-bottom: 20px;
+    width: 300px; /* Define um tamanho para a foto flutuar bem */
+}
+
+/* Limpa o float após o conteúdo (garante que elementos como o footer fiquem abaixo das imagens) */
+.about-details::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Garantir que as imagens dentro dos contêineres flutuantes usem a largura definida */
+.about-details .image-in-text img {
+    width: 100%;
+    height: auto;
+}
