@@ -4,13 +4,15 @@
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
+
+
 body {
-    background-color: #000000 !important; /* Fundo preto */
-    color: #FFD700 !important; /* Cor Ouro para textos padrões */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: blue !important; /* MUDE AQUI PARA AZUL */
+    color: #FFD700 !important;
+    /* ... e o resto das propriedades ... */
 }
+
+
 
 /* Garante que links, títulos e botões também fiquem na cor ouro */
 a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
