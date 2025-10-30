@@ -239,3 +239,46 @@ footer {
     width: 100%;
     height: auto;
 }
+/* Completa a regra de limpeza para a imagem (parte que estava faltando) */
+.image-in-text img {
+    border: 3px solid #FFD700; 
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    color: transparent; 
+}
+
+/* ESTILOS PARA ALINHAR AS FOTOS FLUTUANDO AO LADO DO TEXTO (RESOLVE O POSICIONAMENTO E VISUALIZAÇÃO) */
+
+/* Alinha a primeira imagem (Foto 1) à esquerda */
+.about-details .image-in-text:nth-child(3) {
+    float: left; 
+    margin-right: 20px; 
+    margin-bottom: 20px;
+    width: 300px; /* Garante o tamanho da visualização */
+}
+
+/* Alinha a segunda imagem (Foto 2) à direita */
+.about-details .image-in-text:nth-child(5) {
+    float: right;
+    margin-left: 20px; 
+    margin-bottom: 20px;
+    width: 300px; /* Garante o tamanho da visualização */
+}
+
+/* Limpa o float após o conteúdo */
+.about-details::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Garante que as imagens dentro dos contêineres flutuantes usem a largura definida */
+.about-details .image-in-text img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
