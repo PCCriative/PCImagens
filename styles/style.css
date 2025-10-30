@@ -18,11 +18,6 @@ a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     text-decoration: none;
 }
 
-/* AJUSTE DE LEGIBILIDADE: MUDAR COR DO PARÁGRAFO PARA CINZA CLARO */
-.about-details p {
-    color: #CCCCCC !important; /* Cinza claro, mais suave para leitura prolongada */
-}
-
 /* ---------------- HEADER GERAL (Altura Reduzida) ---------------- */
 
 header {
