@@ -1,7 +1,7 @@
-/* ================================================= */
-/* PCCRIATIVEDIGITAL - VERSÃO COMPLETA DO CSS        */
-/* Fundo Preto | Texto Ouro | Ícones Circulares      */
-/* ================================================= */
+/*
+ * PCCRIATIVEDIGITAL - CSS CORRIGIDO
+ * Fundo Preto | Textos Ouro | Molduras Douradas
+ */
 
 /* RESET */
 * {
@@ -12,204 +12,179 @@
 
 /* BASE */
 body {
-    background-color: #000000 !important;
-    color: #FFD700 !important;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
 }
 
-a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
-    color: #FFD700 !important;
-    text-decoration: none;
+/* CONTAINERS */
+.container-footer,
+#portfolio-page,
+#sobre-page,
+#contato-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* HEADER */
 header {
-    background-color: #000000;
-    padding: 5px 0;
-    position: relative;
-    min-height: 60px;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid #FFD700;
+    padding: 1rem 5%;
 }
 
 .container-header {
-    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 5px;
-    position: relative;
-}
-
-.container-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #FFD700;
 }
 
 /* LOGO */
-.logo {
-    width: 280px;
-    max-width: 100%;
-}
 .logo img {
-    width: 100%;
+    width: 300px;
     height: auto;
-    display: block;
 }
 
 /* MENU */
-.menu-principal {
-    width: 100%;
-    text-align: center;
-    padding-top: 8px;
-}
 .menu-principal ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-.menu-principal ul li a {
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
-/* ✅ ÍCONES SOCIAIS REDONDOS DOURADOS */
-.social-icons {
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-}
-
-.social-icons a {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 2px solid #FFD700;
-    display: flex;
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: .3s;
-}
-
-.social-icons a:hover {
-    background-color: #FFD700;
-    filter: brightness(1.2);
-}
-
-/* Caminho dos PNGs */
-.icon-tel { background-image: url('../assets/telefone.png'); }
-.icon-insta { background-image: url('../assets/instagram.png'); }
-.icon-face { background-image: url('../assets/facebook.png'); }
-.icon-youtube { background-image: url('../assets/youtube.png'); }
-
-/* MAIN */
-main {
-    padding: 40px 0;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.btn-primary {
-    background: transparent;
-    border: 2px solid #FFD700;
-    padding: 10px 25px;
-    border-radius: 5px;
-    transition: .3s;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.btn-primary:hover {
-    background-color: #FFD700;
-    color: #000 !important;
-}
-
-/* FOTOS */
-main img, .album-link img {
-    border: 3px solid #FFD700;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* SOBRE — TEXTO E FOTOS FLUTUANTES */
-.about-details {
-    padding: 20px 0;
-    max-width: 1000px;
-    margin: auto;
-}
-.about-details h1 {
-    margin-bottom: 30px;
-    text-align: center;
-}
-.about-details p {
-    font-size: 18px;
-}
-.about-details .image-in-text:nth-child(3) {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    width: 300px;
-}
-.about-details .image-in-text:nth-child(5) {
-    float: right;
+.menu-principal ul li {
     margin-left: 20px;
-    margin-bottom: 20px;
-    width: 300px;
-}
-.about-details .image-in-text img {
-    width: 100%;
-}
-.about-details::after {
-    content: "";
-    display: table;
-    clear: both;
 }
 
-/* CONTATO — ÍCONES GRANDES */
-.social-contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
-    flex-wrap: wrap;
+.menu-principal ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: bold;
+    transition: color 0.3s;
 }
-.social-contact-icons a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
+
+.menu-principal ul li a:hover {
+    color: #fff;
 }
-.social-contact-icons a div {
-    margin-bottom: 10px;
-}
-.social-contact-icons p {
-    font-size: 16px;
-    color: #FFD700 !important;
+
+/* TITULOS */
+h1, h2, h3, h4 {
+    color: #FFD700;
 }
 
 /* FOOTER */
 footer {
-    background-color: #000;
-    color: #FFD700;
+    background: #111;
+    padding: 1.5rem 0;
     text-align: center;
-    padding: 25px 0;
-    border-top: 1px solid #333;
-    margin-top: 50px;
+    margin-top: 40px;
 }
+
 .container-footer {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.social-links a {
+    color: #FFD700;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+/* SLIDESHOW */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PORTFÓLIO */
+#portfolio-page {
+    padding: 40px 0;
+}
+
+.portfolio-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-intro h1 {
+    font-size: 2.5em;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.album-item {
+    display: block;
+    background: #1a1a1a;
+    border: 3px solid #FFD700;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.album-item:hover {
+    transform: translateY(-5px);
+}
+
+.album-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.album-info {
+    text-align: center;
+    padding: 15px;
+}
+
+.album-info h2 {
+    font-size: 1.3em;
+    color: #FFD700;
+}
+
+/* --- CONTATO (Ícones só aqui) --- */
+.contato-box {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.icons-contato {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.icons-contato img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px #FFD700);
+    transition: 0.3s;
+}
+
+.icons-contato img:hover {
+    transform: scale(1.1);
 }
