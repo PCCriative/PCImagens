@@ -291,3 +291,34 @@ footer {
     color: #FFD700 !important; /* Cor Ouro para o nome do link */
     margin: 0;
 }
+
+/* ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO (Organização e Tamanho dos Textos) */
+.social-contact-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 40px; /* Espaço entre os ícones */
+    margin-top: 50px;
+    flex-wrap: wrap; 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-contact-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px; 
+}
+
+/* Garante que o ícone fique separado do texto de baixo */
+.social-contact-icons a div {
+    margin-bottom: 10px;
+}
+
+.social-contact-icons p {
+    font-size: 16px; /* Tamanho do texto abaixo do ícone */
+    color: #FFD700 !important; /* COR OURO NO TEXTO ABAIXO DO ÍCONE */
+    margin: 0;
+}
