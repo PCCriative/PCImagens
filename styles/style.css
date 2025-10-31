@@ -109,18 +109,21 @@ header {
 }
 
 /* Regras para carregar as imagens de fundo (PNG Ouro) e dar-lhes tamanho (24px) */
-/* CORREÇÃO: Remove a pasta 'icons/' e assume os nomes dos arquivos que você forneceu: telefone.png, etc. */
+
+/* CORREÇÃO FINAL: Usa '../assets/' para garantir que encontre a imagem, 
+   ASSUMINDO que styles.css está dentro da pasta 'styles' e os PNGs em 'assets' */
+
 .social-icons .icon-tel { 
-    background-image: url('assets/telefone.png'); /* CORRIGIDO: assume que o arquivo está em assets/ */
+    background-image: url('../assets/telefone.png'); 
 }
 .social-icons .icon-insta { 
-    background-image: url('assets/instagram.png'); /* CORRIGIDO */
+    background-image: url('../assets/instagram.png'); 
 }
 .social-icons .icon-face { 
-    background-image: url('assets/facebook.png'); /* CORRIGIDO */
+    background-image: url('../assets/facebook.png'); 
 }
 .social-icons .icon-youtube { 
-    background-image: url('assets/youtube.png'); /* CORRIGIDO */
+    background-image: url('../assets/youtube.png'); 
 }
 
 /* DÁ TAMANHO (24PX) AOS ÍCONES PARA QUE ELES APAREÇAM */
