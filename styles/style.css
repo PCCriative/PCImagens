@@ -1,9 +1,16 @@
 /* ================================================= */
-/* ARQUIVO: styles.css - VERSÃO FINAL E LIMPA */
-/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza/Ouro, Layout Flutuante, e Estilos de CONTATO */
+/* PCCRIATIVEDIGITAL - VERSÃO COMPLETA DO CSS        */
+/* Fundo Preto | Texto Ouro | Ícones Circulares      */
 /* ================================================= */
 
-/* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
 body {
     background-color: #000000 !important;
     color: #FFD700 !important;
@@ -12,13 +19,12 @@ body {
     padding: 0;
 }
 
-/* Links, Títulos e Botões */
 a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     color: #FFD700 !important;
     text-decoration: none;
 }
 
-/* ---------------- HEADER ---------------- */
+/* HEADER */
 header {
     background-color: #000000;
     padding: 5px 0;
@@ -26,7 +32,6 @@ header {
     min-height: 60px;
 }
 
-/* Estrutura do Header */
 .container-header {
     width: 90%;
     max-width: 1200px;
@@ -34,24 +39,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5px;
     position: relative;
-    padding-bottom: 5px;
 }
 
-.header-linha-superior {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-}
-
-/* Linha divisória abaixo do menu */
 .container-header::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
     height: 1px;
     background-color: #FFD700;
@@ -59,32 +54,23 @@ header {
 
 /* LOGO */
 .logo {
-    position: static;
-    transform: none;
     width: 280px;
     max-width: 100%;
-    height: auto;
-    margin: 0;
-    z-index: 4;
 }
 .logo img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    border: none !important;
 }
 
 /* MENU */
 .menu-principal {
     width: 100%;
     text-align: center;
-    z-index: 3;
-    padding-top: 5px;
+    padding-top: 8px;
 }
 .menu-principal ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -93,76 +79,63 @@ header {
     text-transform: uppercase;
     font-weight: bold;
 }
-.menu-principal ul li a:hover {
-    text-decoration: underline;
-}
 
-/* ------------------ ÍCONES SOCIAIS REDONDOS OURO ------------------ */
+/* ✅ ÍCONES SOCIAIS REDONDOS DOURADOS */
 .social-icons {
-    flex-basis: 20%;
+    position: absolute;
+    left: 10px;
+    top: 8px;
     display: flex;
     gap: 12px;
-    align-items: center;
-    z-index: 3;
+    z-index: 10;
 }
 
-/* Ícones PNG Ouro */
-.social-icons .icon-tel { background-image: url('../assets/telefone.png'); }
-.social-icons .icon-insta { background-image: url('../assets/instagram.png'); }
-.social-icons .icon-face { background-image: url('../assets/facebook.png'); }
-.social-icons .icon-youtube { background-image: url('../assets/youtube.png'); }
-
-/* Formato dos ícones */
-.social-icons .icon-tel,
-.social-icons .icon-insta,
-.social-icons .icon-face,
-.social-icons .icon-youtube {
-    width: 35px;
-    height: 35px;
-    display: block;
-    background-size: 65%;
-    background-position: center;
-    background-repeat: no-repeat;
+.social-icons a {
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     border: 2px solid #FFD700;
-    background-color: #000;
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .3s;
 }
 
-/* Hover */
-.social-icons .icon-tel:hover,
-.social-icons .icon-insta:hover,
-.social-icons .icon-face:hover,
-.social-icons .icon-youtube:hover {
-    transform: scale(1.15);
-    box-shadow: 0px 0px 8px #FFD700;
+.social-icons a:hover {
+    background-color: #FFD700;
+    filter: brightness(1.2);
 }
 
-/* ---------------- MAIN ---------------- */
+/* Caminho dos PNGs */
+.icon-tel { background-image: url('../assets/telefone.png'); }
+.icon-insta { background-image: url('../assets/instagram.png'); }
+.icon-face { background-image: url('../assets/facebook.png'); }
+.icon-youtube { background-image: url('../assets/youtube.png'); }
+
+/* MAIN */
 main {
     padding: 40px 0;
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-/* Botão */
 .btn-primary {
-    display: inline-block;
-    background-color: transparent;
+    background: transparent;
     border: 2px solid #FFD700;
     padding: 10px 25px;
     border-radius: 5px;
-    text-transform: uppercase;
+    transition: .3s;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
 }
 .btn-primary:hover {
     background-color: #FFD700;
-    color: #000000 !important;
+    color: #000 !important;
 }
 
-/* Fotos com moldura ouro e anti-cópia */
+/* FOTOS */
 main img, .album-link img {
     border: 3px solid #FFD700;
     pointer-events: none;
@@ -170,9 +143,65 @@ main img, .album-link img {
     -webkit-user-drag: none;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* SOBRE — TEXTO E FOTOS FLUTUANTES */
+.about-details {
+    padding: 20px 0;
+    max-width: 1000px;
+    margin: auto;
+}
+.about-details h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.about-details p {
+    font-size: 18px;
+}
+.about-details .image-in-text:nth-child(3) {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.about-details .image-in-text:nth-child(5) {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.about-details .image-in-text img {
+    width: 100%;
+}
+.about-details::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* CONTATO — ÍCONES GRANDES */
+.social-contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.social-contact-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+.social-contact-icons a div {
+    margin-bottom: 10px;
+}
+.social-contact-icons p {
+    font-size: 16px;
+    color: #FFD700 !important;
+}
+
+/* FOOTER */
 footer {
-    background-color: #000000;
+    background-color: #000;
     color: #FFD700;
     text-align: center;
     padding: 25px 0;
@@ -182,14 +211,5 @@ footer {
 .container-footer {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
-
-/* ---------------- SOBRE ---------------- */
-.about-details {
-    padding: 20px 0;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.about-details h1 {
-    margin-bottom: 30px;
