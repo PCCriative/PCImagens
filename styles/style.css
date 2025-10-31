@@ -107,13 +107,23 @@ header {
     align-items: center;
     z-index: 3;
 }
-/* Regras para carregar as imagens de fundo (PNG Ouro) */
-.social-icons .icon-tel { background-image: url('assets/icons/phone_icon_gold.png'); }
-.social-icons .icon-insta { background-image: url('assets/icons/instagram_icon_gold.png'); }
-.social-icons .icon-face { background-image: url('assets/icons/facebook_icon_gold.png'); }
-.social-icons .icon-youtube { background-image: url('assets/icons/youtube_icon_gold.png'); }
 
-/* NOVO: DÁ TAMANHO (24PX) AOS ÍCONES PARA QUE ELES APAREÇAM no cabeçalho e na página de Contato */
+/* Regras para carregar as imagens de fundo (PNG Ouro) e dar-lhes tamanho (24px) */
+/* CORREÇÃO: Remove a pasta 'icons/' e assume os nomes dos arquivos que você forneceu: telefone.png, etc. */
+.social-icons .icon-tel { 
+    background-image: url('assets/telefone.png'); /* CORRIGIDO: assume que o arquivo está em assets/ */
+}
+.social-icons .icon-insta { 
+    background-image: url('assets/instagram.png'); /* CORRIGIDO */
+}
+.social-icons .icon-face { 
+    background-image: url('assets/facebook.png'); /* CORRIGIDO */
+}
+.social-icons .icon-youtube { 
+    background-image: url('assets/youtube.png'); /* CORRIGIDO */
+}
+
+/* DÁ TAMANHO (24PX) AOS ÍCONES PARA QUE ELES APAREÇAM */
 .social-icons .icon-tel,
 .social-icons .icon-insta,
 .social-icons .icon-face,
