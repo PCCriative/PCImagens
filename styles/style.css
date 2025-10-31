@@ -1,12 +1,12 @@
 /* ================================================= */
-/* ARQUIVO: styles.css - VERSÃO FINAL E LIMPA */
-/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza/Ouro, Layout Flutuante, e Estilos de CONTATO */
+/* ARQUIVO: styles.css - VERSÃO INTEGRAL E LIMPA */
+/* Contém todas as regras de layout, tipografia e cores para o projeto */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
 body {
     background-color: #000000 !important; /* Fundo preto */
-    color: #FFD700 !important; /* Cor Ouro para textos padrões (será sobrescrito pelo cinza nos parágrafos) */
+    color: #FFD700 !important; /* Cor Ouro para textos padrões */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
     text-decoration: none;
 }
 
-/* ---------------- HEADER GERAL (Altura Reduzida) ---------------- */
+/* ---------------- HEADER GERAL ---------------- */
 
 header {
     background-color: #000000;
@@ -27,14 +27,14 @@ header {
     min-height: 60px;
 }
 
-/* 01) REESTRUTURAÇÃO DO CABEÇALHO PARA DUAS LINHAS */
+/* 01) ESTRUTURA DO CABEÇALHO PARA DUAS LINHAS (CENTRALIZADO) */
 .container-header {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* CENTRALIZA ITENS HORIZONTALMENTE */
     position: relative;
     padding-bottom: 5px;
 }
@@ -42,7 +42,7 @@ header {
 .header-linha-superior {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* CENTRALIZA O LOGOTIPO */
     align-items: center;
     padding-bottom: 5px;
 }
@@ -58,8 +58,7 @@ header {
     background-color: #FFD700;
 }
 
-
-/* 01) LOGOTIPO: MAIOR (EXTENSO) E NA LINHA SUPERIOR */
+/* 01) LOGOTIPO */
 .logo {
     position: static;
     transform: none;
@@ -76,7 +75,7 @@ header {
     border: none !important;
 }
 
-/* 01) MENU DE NAVEGAÇÃO: NA LINHA ABAIXO DO LOGOTIPO (Centralizado) */
+/* 01) MENU DE NAVEGAÇÃO */
 .menu-principal {
     width: 100%;
     text-align: center;
@@ -99,18 +98,9 @@ header {
     text-decoration: underline;
 }
 
-/* 01) REDES SOCIAIS: CANTO SUPERIOR ESQUERDO COM ÍCONES */
-.social-icons {
-    flex-basis: 20%;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    z-index: 3;
-}
+/* ---------------- ÍCONES (CORREÇÃO DE CAMINHO E TAMANHO) ---------------- */
 
-/* REGRA DE CARREGAMENTO DOS ÍCONES (COM CORREÇÃO FINAL DE PATH E TAMANHO) */
-/* ASSUMIMOS: styles.css em 'styles/' e PNGs em 'assets/' */
-
+/* CORREÇÃO DEFINITIVA: Assume styles.css em 'styles/' e PNGs em 'assets/' */
 .social-icons .icon-tel { 
     background-image: url('../assets/telefone.png'); 
 }
@@ -259,282 +249,12 @@ footer {
     margin-right: auto;
 }
 
-.social-contact-icons a {
+.social-contact-icons div.contact-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 150px; 
-}
-
-/* Garante que o ícone fique separado do texto de baixo */
-.social-contact-icons a div {
-    margin-bottom: 10px;
-}
-
-.social-contact-icons p {
-    font-size: 16px; 
-    color: #FFD700 !important; /* Cor Ouro no texto abaixo do ícone */
-    margin: 0;
-}/* ================================================= */
-/* ARQUIVO: styles.css - VERSÃO FINAL E LIMPA */
-/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza/Ouro, Layout Flutuante, e Estilos de CONTATO */
-/* ================================================= */
-
-/* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
-body {
-    background-color: #000000 !important; /* Fundo preto */
-    color: #FFD700 !important; /* Cor Ouro para textos padrões (será sobrescrito pelo cinza nos parágrafos) */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Garante que links, títulos e botões fiquem na cor ouro */
-a, h1, h2, h3, .menu-principal ul li a, .btn-primary {
-    color: #FFD700 !important;
-    text-decoration: none;
-}
-
-/* ---------------- HEADER GERAL (Altura Reduzida) ---------------- */
-
-header {
-    background-color: #000000;
-    padding: 5px 0;
-    position: relative;
-    min-height: 60px;
-}
-
-/* 01) REESTRUTURAÇÃO DO CABEÇALHO PARA DUAS LINHAS */
-.container-header {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.header-linha-superior {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 5px;
-}
-
-/* 02) LINHA DIVISÓRIA ENTRE O CABEÇALHO E O CONTEÚDO */
-.container-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #FFD700;
-}
-
-
-/* 01) LOGOTIPO: MAIOR (EXTENSO) E NA LINHA SUPERIOR */
-.logo {
-    position: static;
-    transform: none;
-    width: 280px; /* Largura final do logotipo */
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    z-index: 4;
-}
-.logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border: none !important;
-}
-
-/* 01) MENU DE NAVEGAÇÃO: NA LINHA ABAIXO DO LOGOTIPO (Centralizado) */
-.menu-principal {
-    width: 100%;
-    text-align: center;
-    z-index: 3;
-    padding-top: 5px;
-}
-.menu-principal ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-.menu-principal ul li a {
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.menu-principal ul li a:hover {
-    text-decoration: underline;
-}
-
-/* 01) REDES SOCIAIS: CANTO SUPERIOR ESQUERDO COM ÍCONES */
-.social-icons {
-    flex-basis: 20%;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    z-index: 3;
-}
-
-/* REGRA DE CARREGAMENTO DOS ÍCONES (COM CORREÇÃO FINAL DE PATH E TAMANHO) */
-/* ASSUMIMOS: styles.css em 'styles/' e PNGs em 'assets/' */
-
-.social-icons .icon-tel { 
-    background-image: url('../assets/telefone.png'); 
-}
-.social-icons .icon-insta { 
-    background-image: url('../assets/instagram.png'); 
-}
-.social-icons .icon-face { 
-    background-image: url('../assets/facebook.png'); 
-}
-.social-icons .icon-youtube { 
-    background-image: url('../assets/youtube.png'); 
-}
-
-/* DÁ TAMANHO (24PX) AOS ÍCONES PARA QUE ELES APAREÇAM */
-.social-icons .icon-tel,
-.social-icons .icon-insta,
-.social-icons .icon-face,
-.social-icons .icon-youtube {
-    width: 24px; 
-    height: 24px;
-    display: block; 
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-/* ---------------- CONTEÚDO PRINCIPAL (MAIN) ---------------- */
-main {
-    padding: 40px 0;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Estilos de Botão */
-.btn-primary {
-    display: inline-block;
-    background-color: transparent;
-    border: 2px solid #FFD700;
-    padding: 10px 25px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.btn-primary:hover {
-    background-color: #FFD700;
-    color: #000000 !important;
-}
-
-/* ---------------- IMAGENS E PROTEÇÃO ---------------- */
-
-/* 04) PROTEÇÃO E MOLDURA OURO NAS FOTOS (REGRA GLOBAL) */
-main img, .album-link img {
-    border: 3px solid #FFD700;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* ---------------- RODAPÉ ---------------- */
-
-/* 03) RODAPÉ: COM O NOVO TEXTO E CORES */
-footer {
-    background-color: #000000;
-    color: #FFD700;
-    text-align: center;
-    padding: 25px 0;
-    border-top: 1px solid #333;
-    margin-top: 50px;
-}
-.container-footer {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ================================================= */
-/* REGRAS FINAIS DA PÁGINA INICIAL (Layout e Margens) */
-/* ================================================= */
-
-/* AJUSTE DO ESPAÇAMENTO GERAL DA SEÇÃO */
-.about-details {
-    padding: 20px 0;
-    max-width: 1000px; /* Largura máxima para a leitura */
-    margin: 0 auto;
-}
-
-/* AJUSTE DO TÍTULO (Centraliza e adiciona espaço abaixo) */
-.about-details h1 {
-    margin-bottom: 30px; 
-    text-align: center;
-}
-
-/* AJUSTE DE LEGIBILIDADE: AUMENTAR TAMANHO DA FONTE DO PARÁGRAFO */
-.about-details p {
-    font-size: 18px; /* Aumenta a fonte do parágrafo para melhor leitura */
-}
-
-/* ---------------- LAYOUT DE FOTOS FLUTUANTES (300PX) ---------------- */
-
-/* Alinha a primeira imagem (Foto 1) à esquerda, com 300px de largura */
-.about-details .image-in-text:nth-child(3) {
-    float: left; 
-    margin-right: 20px; 
-    margin-bottom: 20px;
-    width: 300px; 
-}
-
-/* Alinha a segunda imagem (Foto 2) à direita, com 300px de largura */
-.about-details .image-in-text:nth-child(5) {
-    float: right;
-    margin-left: 20px; 
-    margin-bottom: 20px;
-    width: 300px; 
-}
-
-/* Garante que a imagem preencha a largura de 300px e mantenha a proporção */
-.about-details .image-in-text img {
-    width: 100%;
-    height: auto;
-}
-
-/* Limpa o float após o conteúdo (Impede que o rodapé suba) */
-.about-details::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-/* ================================================= */
-/* ESTILOS FINAIS DA PÁGINA DE CONTATO (ORGANIZAÇÃO) */
-/* ================================================= */
-
-/* ESTILIZAÇÃO E ORGANIZAÇÃO DA SEÇÃO DE ÍCONES DE CONTATO */
-.social-contact-icons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    gap: 40px; /* Espaço entre os ícones */
-    margin-top: 50px;
-    flex-wrap: wrap; 
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .social-contact-icons a {
@@ -546,6 +266,7 @@ footer {
 }
 
 /* Garante que o ícone fique separado do texto de baixo */
+.social-contact-icons div.contact-item div,
 .social-contact-icons a div {
     margin-bottom: 10px;
 }
