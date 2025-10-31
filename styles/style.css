@@ -1,6 +1,6 @@
 /* ================================================= */
 /* ARQUIVO: styles.css - VERSÃO FINAL E LIMPA */
-/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza (#CCCCCC) e Layout Flutuante Corrigido */
+/* IMPLEMENTA: Logotipo 280px, Fotos 300px, Cor do Texto Cinza/Ouro, Layout Flutuante, e Estilos de CONTATO */
 /* ================================================= */
 
 /* 05) CORES GLOBAIS: FUNDO PRETO E TEXTO COR OURO */
@@ -107,18 +107,23 @@ header {
     align-items: center;
     z-index: 3;
 }
-.social-icons a {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: transparent;
-}
+/* Regras para carregar as imagens de fundo (PNG Ouro) */
 .social-icons .icon-tel { background-image: url('assets/icons/phone_icon_gold.png'); }
 .social-icons .icon-insta { background-image: url('assets/icons/instagram_icon_gold.png'); }
 .social-icons .icon-face { background-image: url('assets/icons/facebook_icon_gold.png'); }
 .social-icons .icon-youtube { background-image: url('assets/icons/youtube_icon_gold.png'); }
+
+/* NOVO: DÁ TAMANHO (24PX) AOS ÍCONES PARA QUE ELES APAREÇAM no cabeçalho e na página de Contato */
+.social-icons .icon-tel,
+.social-icons .icon-insta,
+.social-icons .icon-face,
+.social-icons .icon-youtube {
+    width: 24px; 
+    height: 24px;
+    display: block; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 /* ---------------- CONTEÚDO PRINCIPAL (MAIN) ---------------- */
@@ -144,38 +149,6 @@ main {
 .btn-primary:hover {
     background-color: #FFD700;
     color: #000000 !important;
-}
-
-
-/* ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO */
-.social-contact-icons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    gap: 40px; /* Espaço entre os ícones */
-    margin-top: 50px;
-    flex-wrap: wrap; /* Garante que quebrem a linha em telas pequenas */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.social-contact-icons a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 150px; /* Largura para cada bloco de ícone */
-}
-
-/* Garante que o ícone fique separado do texto de baixo */
-.social-contact-icons a div {
-    margin-bottom: 10px;
-}
-
-.social-contact-icons p {
-    font-size: 16px; /* Tamanho do texto abaixo do ícone */
-    color: #FFD700 !important; /* Cor Ouro para o nome do link */
-    margin: 0;
 }
 
 /* ---------------- IMAGENS E PROTEÇÃO ---------------- */
@@ -220,14 +193,12 @@ footer {
 .about-details h1 {
     margin-bottom: 30px; 
     text-align: center;
-} 
+}
 
-/* NOVO BLOCO (AUMENTO DA FONTE) VAI AQUI ABAIXO: */
 /* AJUSTE DE LEGIBILIDADE: AUMENTAR TAMANHO DA FONTE DO PARÁGRAFO */
 .about-details p {
     font-size: 18px; /* Aumenta a fonte do parágrafo para melhor leitura */
 }
-
 
 /* ---------------- LAYOUT DE FOTOS FLUTUANTES (300PX) ---------------- */
 
@@ -261,38 +232,11 @@ footer {
 }
 
 
-/* ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO (Organização e Tamanho dos Textos) */
-.social-contact-icons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    gap: 40px; /* Espaço entre os ícones */
-    margin-top: 50px;
-    flex-wrap: wrap; /* Garante que quebrem a linha em telas pequenas */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* ================================================= */
+/* ESTILOS FINAIS DA PÁGINA DE CONTATO (ORGANIZAÇÃO) */
+/* ================================================= */
 
-.social-contact-icons a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 150px; /* Largura para cada bloco de ícone */
-}
-
-/* Garante que o ícone fique separado do texto de baixo */
-.social-contact-icons a div {
-    margin-bottom: 10px;
-}
-
-.social-contact-icons p {
-    font-size: 16px; /* Tamanho do texto abaixo do ícone */
-    color: #FFD700 !important; /* Cor Ouro para o nome do link */
-    margin: 0;
-}
-
-/* ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO (Organização e Tamanho dos Textos) */
+/* ESTILIZAÇÃO E ORGANIZAÇÃO DA SEÇÃO DE ÍCONES DE CONTATO */
 .social-contact-icons {
     display: flex;
     justify-content: center; /* Centraliza os ícones */
@@ -318,7 +262,7 @@ footer {
 }
 
 .social-contact-icons p {
-    font-size: 16px; /* Tamanho do texto abaixo do ícone */
-    color: #FFD700 !important; /* COR OURO NO TEXTO ABAIXO DO ÍCONE */
+    font-size: 16px; 
+    color: #FFD700 !important; /* Cor Ouro no texto abaixo do ícone */
     margin: 0;
 }
