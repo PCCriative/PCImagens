@@ -1,6 +1,6 @@
  /*
- * ARQUIVO styles.css COMPLETO E FINALIZADO
- * CONTÉM ESTILOS GERAIS E TODAS AS CORREÇÕES (Justificação, Float e Clearfix)
+ * ARQUIVO styles.css FINALIZADO
+ * CONTÉM ESTILOS GERAIS E TODAS AS CORREÇÕES ESTÉTICAS E TÉCNICAS
  */
 
 /* ==================================== */
@@ -46,8 +46,9 @@ header {
     text-align: center;
 }
 
+/* CORREÇÃO ESTÉTICA 1: LOGOTIPO AUMENTADO */
 .logo img {
-    max-height: 80px;
+    max-height: 120px; /* Aumentado de 80px para 120px para maior destaque */
     display: inline-block;
 }
 
@@ -90,38 +91,41 @@ footer {
 }
 
 /* ==================================== */
-/* 5. ESTILOS DE CONTEÚDO E CORREÇÕES (AS NOVAS REGRAS) */
+/* 5. ESTILOS DE CONTEÚDO E CORREÇÕES */
 /* ==================================== */
 
-/* REGRA PARA CORRIGIR FLUTUAÇÃO: CLEARFIX */
+/* REGRA TÉCNICA 1: CORRIGE FLUTUAÇÃO (CLEARFIX) */
 .clearfix::after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* REGRA GERAL PARA IMAGENS DENTRO DO TEXTO */
+/* REGRA TÉCNICA 2: MOLDURAS DOURADAS NAS FOTOS */
 .image-in-text {
     max-width: 350px;
     height: auto;
+    /* CORREÇÃO ESTÉTICA 2: MOLDURA OURO */
+    border: 5px solid #FFD700; 
 }
 
-/* REGRA DE POSICIONAMENTO PARA FOTOS FIXAS À ESQUERDA E DIREITA */
+/* REGRA TÉCNICA 3: POSICIONAMENTO PARA FOTOS FIXAS À ESQUERDA E DIREITA */
 .float-left {
     float: left;
-    margin-right: 20px;
+    margin-right: 20px; /* Espaço entre a foto e o texto */
     margin-bottom: 10px;
 }
 
 .float-right {
     float: right;
-    margin-left: 20px;
+    margin-left: 20px; /* Espaço entre a foto e o texto */
     margin-bottom: 10px;
 }
 
-/* REGRA ESPECÍFICA PARA A PÁGINA "SOBRE" (ITÁLICO E JUSTIFICAÇÃO) */
-/* O seletor continua o mesmo, pois o ID da MAIN é #about-page */
+/* REGRA TÉCNICA 4: PÁGINA "SOBRE" (ITÁLICO E JUSTIFICAÇÃO) */
 #about-page .about-details p {
-    font-style: italic;
+    /* CORREÇÃO TÉCNICA 3: APLICA ITÁLICO */
+    font-style: italic; 
+    /* CORREÇÃO TÉCNICA 4: APLICA JUSTIFICAÇÃO */
     text-align: justify;
 }
