@@ -281,3 +281,11 @@ footer {
 #about-page .about-details p {
     font-style: italic; 
 }
+
+/* REGRA PARA CORRIGIR FLUTUAÇÃO: CLEARFIX */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
