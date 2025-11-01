@@ -276,3 +276,8 @@ footer {
     color: #FFD700 !important; /* Cor Ouro no texto abaixo do ícone */
     margin: 0;
 }
+
+/* REGRA ESPECÍFICA: APLICA ITÁLICO APENAS NA PÁGINA "SOBRE MIM" */
+#about-page .about-details p {
+    font-style: italic; 
+}
