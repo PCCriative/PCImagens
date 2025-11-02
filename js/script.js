@@ -2,8 +2,8 @@
 const albuns = [
   {
     nome: "Estádio Nilton Santos",
-    primeiraFoto: "assets/nilton_santos/foto1.jpg",
-    link: "nilton_santos.html"
+    primeiraFoto: "../imagens/nilton_santos/foto1.jpg",
+    link: "../albuns/nilton_santos.html"
   },
   // Exemplo de mais álbuns:
   // {
