@@ -1,6 +1,6 @@
 /*
  * ARQUIVO styles.css FINAL E CORRIGIDO
- * LOGOTIPO GARANTIDO EM 220PX
+ * LOGOTIPO GARANTIDO EM 220PX E TODAS AS REGRAS ESTÉTICAS
  */
 
 /* ==================================== */
@@ -46,16 +46,10 @@ header {
 }
 
 /* AJUSTE FINAL DO LOGOTIPO */
-
-
-
-/* CORREÇÃO FORÇADA E GARANTIDA */
 .logo img {
-    max-height: 220px !important;
-    display: block; /* Mudei para 'block' para forçar a visibilidade */
-    margin: 0 auto;
+    max-height: 220px; /* VALOR CORRETO E FINAL */
+    display: inline-block;
 }
-
 
 .menu-principal {
     margin-top: 10px;
