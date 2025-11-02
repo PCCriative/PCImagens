@@ -48,10 +48,14 @@ header {
 /* AJUSTE FINAL DO LOGOTIPO */
 
 
+
+/* CORREÇÃO FORÇADA E GARANTIDA */
 .logo img {
-    max-height: 220px; /* CORRIGIDO */
-    display: inline-block;
+    max-height: 220px !important;
+    display: block; /* Mudei para 'block' para forçar a visibilidade */
+    margin: 0 auto;
 }
+
 
 .menu-principal {
     margin-top: 10px;
