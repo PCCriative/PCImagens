@@ -108,4 +108,28 @@ footer {
 }
 
 /* MOLDURAS DOURADAS NAS FOTOS */
-.image-in-
+.image-in-text {
+    max-width: 350px;
+    height: auto;
+    border: 5px solid #FFD700;
+}
+
+/* POSICIONAMENTO PARA FOTOS FIXAS À ESQUERDA E DIREITA */
+.float-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* REGRAS DE TEXTO (ITALICO, JUSTIFICAÇÃO E COR OURO) */
+#about-page .about-details p, #home-page .about-details p {
+    font-style: italic;
+    text-align: justify;
+    color: #FFD700;
+}
