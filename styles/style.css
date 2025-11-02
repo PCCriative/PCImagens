@@ -47,7 +47,7 @@ header {
 
 /* AJUSTE FINAL DO LOGOTIPO */
 .logo img {
-    max-height: 220px; /* Reduzido de 280px para 220px para melhor espaçamento */
+    max-height: 220px; /* CORRIGIDO PARA 220px */
     display: inline-block;
 }
 
