@@ -1,6 +1,6 @@
 /*
- * ARQUIVO styles.css FINAL E LIMPO
- * INCLUI FUNDO PRETO, LOGO 280PX, COR OURO, ITALICO, JUSTIFICACAO E FLUTUACAO CORRETA
+ * ARQUIVO styles.css FINAL E CORRIGIDO
+ * LOGOTIPO AJUSTADO PARA 220PX
  */
 
 /* ==================================== */
@@ -45,9 +45,9 @@ header {
     text-align: center;
 }
 
-/* LOGOTIPO AUMENTADO PARA 280PX */
+/* AJUSTE FINAL DO LOGOTIPO */
 .logo img {
-    max-height: 280px;
+    max-height: 220px; /* Reduzido de 280px para 220px para melhor espaçamento */
     display: inline-block;
 }
 
