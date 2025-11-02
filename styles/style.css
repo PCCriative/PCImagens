@@ -1,4 +1,4 @@
- /*
+/*
  * ARQUIVO styles.css FINALIZADO
  * CONTÉM ESTILOS GERAIS E TODAS AS CORREÇÕES ESTÉTICAS E TÉCNICAS
  */
@@ -16,7 +16,8 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333; /* Cor base do texto */
-    background-color: #f4f4f4;
+    /* NOVA CORREÇÃO ESTÉTICA: FUNDO PRETO */
+    background-color: #000000; 
 }
 
 /* ==================================== */
@@ -26,6 +27,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    color: #333; /* Mantém a cor base dentro dos containers, será sobrescrito pelo texto */
 }
 
 main {
@@ -46,9 +48,8 @@ header {
     text-align: center;
 }
 
-/* CORREÇÃO ESTÉTICA 1: LOGOTIPO AUMENTADO */
 .logo img {
-    max-height: 280px; /* Aumentado para 280px */
+    max-height: 280px;
     display: inline-block;
 }
 
@@ -94,6 +95,13 @@ footer {
 /* 5. ESTILOS DE CONTEÚDO E CORREÇÕES */
 /* ==================================== */
 
+/* NOVA CORREÇÃO ESTÉTICA: CABEÇALHO DO TEXTO EM OURO */
+.about-details h1 {
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 /* REGRA TÉCNICA 1: CORRIGE FLUTUAÇÃO (CLEARFIX) */
 .clearfix::after {
     content: "";
@@ -121,16 +129,16 @@ footer {
     margin-bottom: 10px;
 }
 
-/* REGRA ESPECÍFICA PARA A PÁGINA "SOBRE" (ITÁLICO, JUSTIFICAÇÃO E COR OURO) */
+/* REGRAS PARA PÁGINA "SOBRE" (ITÁLICO, JUSTIFICAÇÃO E COR OURO) */
 #about-page .about-details p {
     font-style: italic;
     text-align: justify;
-    color: #FFD700; /* NOVA: Cor do texto em ouro para a página Sobre */
+    color: #FFD700; 
 }
 
-/* NOVA REGRA ESPECÍFICA PARA A PÁGINA INICIAL (ITÁLICO, JUSTIFICAÇÃO E COR OURO) */
+/* REGRAS PARA PÁGINA INICIAL (ITÁLICO, JUSTIFICAÇÃO E COR OURO) */
 #home-page .about-details p {
     font-style: italic;
     text-align: justify;
-    color: #FFD700; /* NOVA: Cor do texto em ouro para a página Inicial */
+    color: #FFD700; 
 }
