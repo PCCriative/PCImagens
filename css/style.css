@@ -15,7 +15,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #000000; /* FUNDO PRETO */
+    background-color: #0a0a0a; /* FUNDO PRETO */
 }
 
 /* ==================================== */
@@ -25,6 +25,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 main {
@@ -40,10 +46,9 @@ h1, h2, p {
 /* 3. CABEÇALHO E NAVEGAÇÃO */
 /* ==================================== */
 header {
-    background-color: #ffffff;
-    border-bottom: 2px solid #ddd;
     padding: 10px 0;
 }
+
 
 .header-linha-superior {
     text-align: center;
@@ -51,7 +56,7 @@ header {
 
 /* AJUSTE FINAL DO LOGOTIPO */
 .logo img {
-    max-height: 220px; /* VALOR CORRETO E FINAL */
+    width: 190px;
     display: inline-block;
 }
 
@@ -72,14 +77,16 @@ header {
 
 .menu-principal ul li a {
     text-decoration: none;
-    color: #0056b3;
+    color: #9e880a;
     font-weight: bold;
     padding: 5px 10px;
-    transition: color 0.3s;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .menu-principal ul li a:hover {
-    color: #007bff;
+    color: #FFD700;
+    text-decoration: underline;
 }
 
 /* ==================================== */
@@ -136,4 +143,97 @@ footer {
     font-style: italic;
     text-align: justify;
     color: #FFD700;
+}
+
+.portfolio-list {
+    margin: 0 auto;
+    width: 90%;
+    /* container padrão; a grade masonry é aplicada em .album-list abaixo */
+}
+
+.album-list {
+    /* Masonry-like layout using CSS columns. The album cards (anchors) must be inline-block */
+    -webkit-column-width: 300px;
+    -moz-column-width: 300px;
+    column-width: 300px;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+    width: 100%;
+}
+
+.album-card {
+    display: inline-block; /* participate in column flow */
+    width: 100%;
+    margin: 0 0 24px; /* vertical spacing between stacked cards */
+    text-decoration: none;
+    color: inherit;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.album-card span {
+    color: #FFD700;
+}
+
+.album-list img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid #FFD700; /* MOLDURA DOURADA NAS IMAGENS */
+    box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+    .album-list { column-width: 340px; }
+}
+
+@media (max-width: 480px) {
+    .album-list { column-width: 200px; column-gap: 12px; }
+    .album-card { margin-bottom: 12px; }
+}
+
+/* ==================================== */
+/* 6. MASONRY-LIKE PHOTO GRID (CSS columns) */
+/* Use when images have varying heights so they pack tightly like Masonry */
+/* This approach avoids explicit JS and keeps markup simple: .photo-grid > .photo-item > img */
+.photo-grid {
+    /* column-width sets the ideal column size; browser will create as many as fit */
+    -webkit-column-width: 300px;
+    -moz-column-width: 300px;
+    column-width: 300px;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+    width: 100%;
+    /* ensure items don't overflow container padding/width rules */
+}
+
+.photo-item {
+    /* inline-block so each item participates in column flow */
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 24px; /* vertical spacing between stacked items */
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+}
+
+.photo-grid img {
+    display: block; /* remove inline gap and allow width:100% to behave */
+    width: 100%;
+    height: auto;
+    border: 4px solid #FFD700; /* match existing album borders */
+    box-sizing: border-box;
+}
+
+/* Responsive tweaks: slightly larger columns on wider screens */
+@media (min-width: 1200px) {
+    .photo-grid { column-width: 340px; }
+}
+
+@media (max-width: 480px) {
+    .photo-grid { column-width: 200px; column-gap: 12px; }
+    .photo-item { margin-bottom: 12px; }
 }
