@@ -1,38 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Criative Digital | Sua Parceira em Eventos</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC Criative Digital | Portfólio Interativo</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ===== Carrossel Básico ===== */
+  #carrossel-container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+  }
+
+  #carrossel-foto {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border: 4px solid #FFD700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  #carrossel-foto:hover {
+    transform: scale(1.03);
+  }
+
+  #album-nome {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #FFD700;
+    font-weight: bold;
+  }
+
+  .carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+    user-select: none;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+
+  .carrossel-btn:hover {
+    background-color: rgba(255,215,0,0.8);
+    color: #000;
+  }
+
+  @media (max-width: 480px) {
+    #carrossel-foto { max-height: 300px; }
+    .carrossel-btn { padding: 5px 10px; font-size: 1.2em; }
+  }
+
+  /* ===== Modal Galeria ===== */
+  #modal-galeria {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #modal-galeria img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 4px solid #FFD700;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  #modal-galeria .modal-btn {
+    background-color: rgba(255,215,0,0.8);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  #modal-galeria .close-modal {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+  }
+
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container-header">
-            <div class="header-linha-superior">
-                <a href="index.html" class="logo">
-                    <img src="imagens/logo.png" alt="PC Criative Digital Logo">
-                </a>
-            </div>
-            <nav class="menu-principal">
-                <ul>
-                    <li><a href="index.html">Página Inicial</a></li>
-                    <li><a href="portfolio.html">Portfólio</a></li>
-                    <li><a href="sobre.html">Sobre</a></li> 
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="container-header">
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="PC Criative Digital Logo">
+    </a>
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="index.html">Página Inicial</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="sobre.html">Sobre</a></li> 
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <main id="home-page">
-    </main>
+<main>
+  <section id="carrossel-container">
+    <img id="carrossel-foto" src="" alt="">
+    <div id="album-nome"></div>
+    <button id="prev" class="carrossel-btn">&#10094;</button>
+    <button id="next" class="carrossel-btn">&#10095;</button>
+  </section>
+</main>
 
-    <footer>
-        <div class="container-footer">
-            <p>&copy; 2025 PCCRIATIVEDIGITAL. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<!-- Modal da galeria -->
+<div id="modal-galeria">
+  <span class="close-modal">&times;</span>
+  <img id="modal-img" src="" alt="">
+  <div>
+    <button id="modal-prev" class="modal-btn">&#10094; Anterior</button>
+    <button id="modal-next" class="modal-btn">Próximo &#10095;</button>
+  </div>
+</div>
+
+<footer>
+  <div class="container-footer">
+    <p>&copy; 2025 PCCRIATIVEDIGITAL. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  // ===== Dados dos álbuns e suas primeiras fotos =====
+  const albuns = [
+    { nome: "Estádio Nilton Santos", primeiraFoto: "../imagens/nilton_santos/foto1.jpg", link: "../albuns/nilton_santos.html", fotos: ["../imagens/nilton_santos/foto1.jpg", "../imagens/nilton_santos/foto2.jpg"] },
+    { nome: "Maria Clara", primeiraFoto: "../imagens/maria_clara/maria_clara1.jpg", link: "../albuns/maria_clara.html", fotos: ["../imagens/maria_clara/maria_clara1.jpg","../imagens/maria_clara/maria_clara2.jpg"] },
+    { nome: "Poly Gomes", primeiraFoto: "../imagens/poly_gomes/poly_gomes1.jpg", link: "../albuns/poly_gomes.html", fotos: ["../imagens/poly_gomes/poly_gomes1.jpg"] },
+    { nome: "Rayssa (Parte 1)", primeiraFoto: "../imagens/rayssa_debutante_p1/rayssa_debutante_p1_foto1.jpg", link: "../albuns/rayssa_debutante_p1.html", fotos: ["../imagens/rayssa_debutante_p1/rayssa_debutante_p1_foto1.jpg"] },
+    { nome: "Rayssa (Parte 2)", primeiraFoto: "../imagens/rayssa_debutante_p2/rayssa_debutante_p2_foto1.jpg", link: "../albuns/rayssa_debutante_p2.html", fotos: ["../imagens/rayssa_debutante_p2/rayssa_debutante_p2_foto1.jpg"] },
+    { nome: "Rute (70 Anos)", primeiraFoto: "../imagens/rute_70/aniversario_rute_foto1.jpg", link: "../albuns/rute_70.html", fotos: ["../imagens/rute_70/aniversario_rute_foto1.jpg"] },
+    { nome: "Bodas de Ouro – Sergio e Preta", primeiraFoto: "../imagens/bodas_sergio_preta/bodas_sergio_preta1.jpg", link: "../albuns/bodas_sergio_preta.html", fotos: ["../imagens/bodas_sergio_preta/bodas_sergio_preta1.jpg"] }
+  ];
+
+  let idx = 0; // índice do carrossel
+  const img = document.getElementById('carrossel-foto');
+  const nome = document.getElementById('album-nome');
+
+  // Atualiza foto e nome
+  function atualizaCarrossel() {
+    img.src = albuns[idx].primeiraFoto;
+    img.alt = albuns[idx].nome;
+    nome.textContent = albuns[idx].nome;
+  }
+
+  document.getElementById('prev').onclick = () => { idx = (idx - 1 + albuns.length) % albuns.length; atualizaCarrossel(); reiniciaIntervalo(); }
+  document.getElementById('next').onclick = () => { idx = (idx + 1) % albuns.length; atualizaCarrossel(); reiniciaIntervalo(); }
+
+  // Carrossel automático
+  let intervalo = setInterval(() => { idx = (idx + 1) % albuns.length; atualizaCarrossel(); }, 5000);
+  function reiniciaIntervalo() { clearInterval(intervalo); intervalo = setInterval(() => { idx = (idx + 1) % albuns.length; atualizaCarrossel(); }, 5000); }
+
+  // ===== Modal =====
+  const modal = document.getElementById('modal-galeria');
+  const modalImg = document.getElementById('modal-img');
+  const closeModal = document.querySelector('.close-modal');
+  let modalIndex = 0; // índice dentro do álbum atual
+
+  // Abrir modal
+  img.onclick = () => {
+    modal.style.display = 'flex';
+    modalIndex = 0;
+    modalImg.src = albuns[idx].fotos[modalIndex];
+  }
+
+  closeModal.onclick = () => { modal.style.display = 'none'; }
+
+  document.getElementById('modal-prev').onclick = () => {
+    modalIndex = (modalIndex - 1 + albuns[idx].fotos.length) % albuns[idx].fotos.length;
+    modalImg.src = albuns[idx].fotos[modalIndex];
+  }
+
+  document.getElementById('modal-next').onclick = () => {
+    modalIndex = (modalIndex + 1) % albuns[idx].fotos.length;
+    modalImg.src = albuns[idx].fotos[modalIndex];
+  }
+
+  window.onload = atualizaCarrossel;
+
+</script>
 </body>
 </html>
