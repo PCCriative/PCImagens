@@ -1,0 +1,12 @@
+name: base-html-plugin
+version: 0.0.1
+description: Plugin para gerar um projeto base HTML
+type: app
+inputs:
+  - label: Título da página
+    name: page_title
+    type: text
+    required: true
+    default: Meu Projeto Base HTML
+    help: Informe o título da página HTML
+hooks: []
